@@ -1,0 +1,80 @@
+package ru.geekbrains.lesson1;
+
+public class MainApp {
+    static int odd1 = 3;
+    static int odd2 = 5;
+    static int even1 = 10;
+    static int even2 = 2;
+    static String word1 = "Карл";
+
+    public static void main(String[] args) {
+        byte val1 = -69; //task 1, 2
+        short val2 = 1488;
+        int val3 = 42;
+        long val4 = 88005553535L;
+        float val5 = (float) 2.28;
+        double val6 = -282.282;     //делал всё в одну строку
+        char val7;                  //тут идёт объявление переменной
+        val7 = '\u2764';            //тут происходит инициализация переменной
+        boolean val8 = false;
+        System.out.println("task1,2:" + "\n" + "byte: " + val1 + "\n" + "short: " + val2 + "\n" + "int: " + val3 + "\n" + "long: " + val4 + "\n" + "float: " + val5 + "\n" + "double: " + val6 + "\n" + "char: " + val7 + "\n" + "boolean: " + val8);
+        System.out.println("task3: " + "Выражение: a*(b+(c/d) = " + task3(odd1, odd2, even1, even2) + "\n" + "Где: " + "a=" + odd1 + ", b=" + odd2 + ", c=" + even1 + ", d=" + even2);
+        System.out.println("task4: " + "Число " + (even1 + odd2) + " в пределах от 10 до 20? " + task4(even1, odd2));
+        System.out.println("task5: " + "Число " + even1 + " " + task5(even1));
+        System.out.println("task6: " + "Число " + odd1 + " отрицательное? " + task6(odd1));
+        task7(word1);
+        System.out.println("task8:");
+        task8(2000);
+        task8(1900);
+        task8(2016);
+        task8(2015);
+    }
+
+    public static int task3(int a, int b, int c, int d) {
+        return a * (b + (c / d));
+    }
+
+    public static boolean task4(int a, int b) { //idea скоратила выражение
+        int sum = a + b;                        //и всё правильно сократила))
+        return 9 < sum && sum <= 20;            //т.к. операторы сравнение возвращают true или false
+    }                                           // необязательно писать if...
+
+    public static String task5(int a) {
+        if (0 <= a) {
+            return ("положительное");
+        }
+        return ("отрицательное");
+    }
+
+    public static boolean task6(int a) {
+        return a < 0;
+    }
+
+    public static void task7(String a) {
+        System.out.println("task7: Привет, " + a);
+    }
+
+    private static void task8(int year) {
+        int mod4 = year % 4;
+        int mod100 = year % 100;
+        int mod400 = year % 400;
+        boolean answer = false;
+
+        /*if (mod4 == 0) {
+            if (mod100 == 0) {
+                answer = mod400 == 0;
+            } else {
+                answer = true;
+            }
+        }*/
+
+        answer = mod4 == 0 && mod100 != 0 || mod400 == 0;
+
+        if (answer) {
+            System.out.println("Год " + year + " високосный.");
+        } else {
+            System.out.println("Год " + year + " не високосный.");
+        }
+    }
+
+}
