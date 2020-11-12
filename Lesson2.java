@@ -2,7 +2,7 @@ package ru.geekbrains.lesson2;
 
 import java.util.Arrays;
 
-public class MainApp {
+public class Lesson2 {
 
     public static void main(String[] args) {
         task1();
@@ -54,7 +54,9 @@ public class MainApp {
         System.out.println("task4:");
         for (int i = 0; i < task4.length; i++) {
             task4[i][i] = 1;
+            task4[i][task4.length-1-i] = 1;
             System.out.println(Arrays.toString(task4[i]));
+
         }
     }
 
