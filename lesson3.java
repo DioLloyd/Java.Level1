@@ -14,11 +14,11 @@ public class lesson3 {
         Scanner scannerWord = new Scanner(System.in);
         String inputWord = scannerWord.nextLine();
 
-        do {
+        while (!inputWord.equals(word)){
             wrongAnswer(word, inputWord);
             System.out.println("Попробуйте ещё:");
             inputWord = scannerWord.nextLine();
-        } while (!inputWord.equals(word));
+        }
         System.out.println("Правильно! Вы выиграли!");
     }
 
