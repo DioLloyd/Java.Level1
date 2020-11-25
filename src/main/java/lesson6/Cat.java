@@ -2,8 +2,8 @@ package lesson6;
 
 public class Cat extends Animal {
 
-    public Cat(String name, int runLimit, float jumpLimit) {
-        super(name, runLimit, jumpLimit, 0);
+    public Cat(String name, int appetite, int runLimit, float jumpLimit) {
+        super(name, appetite, runLimit, jumpLimit, 0);
     }
 
     @Override
@@ -11,4 +11,7 @@ public class Cat extends Animal {
         return "Кот " + super.getName();
     }
 
+    public String getSatietyInfo() {
+        return getName() + " " + super.getSatietyInfo();
+    }
 }
