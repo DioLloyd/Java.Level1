@@ -2,8 +2,8 @@ package lesson6;
 
 public class Dog extends Animal {
 
-    public Dog(String name, int runLimit, float jumpLimit, int swimLimit) {
-        super(name, runLimit, jumpLimit, swimLimit);
+    public Dog(String name, int appetite, int runLimit, float jumpLimit, int swimLimit) {
+        super(name, appetite, runLimit, jumpLimit, swimLimit);
     }
 
     @Override
